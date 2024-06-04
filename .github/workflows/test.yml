@@ -6,12 +6,20 @@ on:
       TEST_TYPE:
         required: false
         type: string
-        default: acceptance
+        default: cucumber
         description: Either 'unit' or 'cucumber' or 'cypress'
 
 permissions: write-all
 
 jobs:
-  call-cypress:
-    if: ${{inputs.TEST_TYPE == 'cypress'}}
-    uses: trevorism/actions-workflows/.github/workflows/cypress.yml@master
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install
+        working-directory: ./src/app
+      - run: cypress run --env username=${{secrets.CYPRESS_USERNAME}},password=${{secrets.CYPRESS_PASSWORD}}
+        working-directory: ./src/app

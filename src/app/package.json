@@ -1,10 +1,10 @@
 {
   "name": "cypress-ormodule",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test:e2e": "cypress run"
+    "test:e2e": "cypress run --env trevorismTestEvent=enabled"
   },
   "devDependencies": {
     "cypress": "^13.11.0",

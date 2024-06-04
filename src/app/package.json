@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "test:e2e": "cypress run --env trevorismTestEvent=enabled"
+    "test:e2e": "cypress run"
   },
   "devDependencies": {
     "cypress": "^13.11.0",

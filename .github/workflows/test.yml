@@ -1,0 +1,17 @@
+name: Test application
+
+on:
+  workflow_dispatch:
+    inputs:
+      TEST_TYPE:
+        required: false
+        type: string
+        default: acceptance
+        description: Either 'unit' or 'cucumber' or 'cypress'
+
+permissions: write-all
+
+jobs:
+  call-cypress:
+    if: ${{inputs.TEST_TYPE == 'cypress'}}
+    uses: trevorism/actions-workflows/.github/workflows/cypress.yml@master

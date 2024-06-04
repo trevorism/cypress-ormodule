@@ -1,9 +1,10 @@
 import { defineConfig } from "cypress";
+import registerTrevorismEventSender from "@trevorism/cypress-test-result-events";
 
 export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      registerTrevorismEventSender({on, config}, 'cypress-ormodule');
     },
   },
 });

@@ -8,9 +8,9 @@
   },
   "devDependencies": {
     "@trevorism/cypress-test-result-events": "^1.0.0",
-    "cypress": "^13.11.0",
-    "eslint": "^9.4.0",
-    "prettier": "^3.3.0",
-    "vite": "^5.2.0"
+    "cypress": "^15.7.0",
+    "eslint": "^9.39.1",
+    "prettier": "^3.6.2",
+    "vite": "^7.2.4"
   }
 }

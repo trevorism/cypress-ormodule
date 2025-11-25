@@ -11,6 +11,7 @@ describe('home page', () => {
         cy.get('#username').type(Cypress.env('USERNAME'))
         cy.get('#password').type(Cypress.env('PASSWORD'))
         cy.get('button').click()
+        cy.wait(5000)
         cy.get('app-home').should('exist')
         cy.get('app-home').contains(Cypress.env('USERNAME'))
     })
